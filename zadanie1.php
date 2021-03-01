@@ -53,6 +53,15 @@
             </table>
         </div>
     <hr/>
+<?php
+    /**
+     * pobranie danych z tablicy assoc metodą fetch_assoc();
+     */
+    $zapytanie = $polaczenie->query("SELECT idh,nazwa from hobby");
+    while($wiersz = $zapytanie->fetch_assoc()){
+        echo $wiersz['idh']." ".$wiersz['nazwa']."<br>";
+    }
+?>
 </body>
 </html>
 <?php $polaczenie->close(); ?>
